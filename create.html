@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+background-image: url(webbg5.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+div.damit{
+  margin-top: 100px;
+
+}
+h2 {
+  font-size: 50px;
+
+}
+h1 {
+  font-size: 25px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: -4px;
+}
+.card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align:center;
+  font-family: arial;
+float:left;
+ margin-right: 40px;
+ margin-left: 95px;
+  border: 1px solid #ccc;
+
+  width: 300px;
+  text-align:center;
+
+
+  
+}
+
+.price {
+  color: red;
+  font-size: 28px;
+}
+
+.card button {
+  border: 0px;
+  outline: 0;
+padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align:center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.6; 
+}
+
+
+.checked {
+  color: orange;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: none;
+  color: white;
+  padding: 10px 10px;
+  margin-left:0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+</style>   
+</head>
+<body>
+  <a href= "index.html "><img src="x.png"width="45" height="45" style=" position: absolute; left:1250px; top: 17px"></a>
+
+<!-- Add icon library -->
+<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<a href= "index.html "><img src="logo2.png" width="250" height="110" style="vertical-align:middle; ; position: absolute; left:50px; top: 50px"></a>
+
+
+<div class="damit">
+<h2 style="text-align:center"><b>CHOOSE YOUR PRODUCT<b></h2>
+
+
+<div class="card">
+  <a href="createwhiteshirt.html"><img src="whiteshirt.png" alt="Denim Jeans" style="width:370px;height:420px;margin-left:-37px;"></a>
+</div>
+<h2 style=" font-size:40px;position: absolute; left:142px; top: 600px">White t-shirt</h2>
+
+<div class="card">
+  <a href="createwhitemug.html">
+  <img src="whitemug.png" alt="Denim Jeans"  style="width:395px;height:420px;margin-left:-69px;"></a>
+
+</div>
+<h2 style=" font-size:40px;position: absolute; left:589px; top: 600px">White Mug</h2>
+
+<div class="card">
+  <a href="createwhitecap.html">
+  <img src="whitecap.png" alt="Denim Jeans"  style="width:380px;height:420px;margin-left:-43px;"></a>
+
+</div>
+<h2 style=" font-size:40px;position: absolute; left:1038px; top: 600px">White Cap</h2>
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("xxx");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+</div>
+</body>
+</html>

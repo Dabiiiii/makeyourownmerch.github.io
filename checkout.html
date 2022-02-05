@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+    background-image: url(webbg5.jpg);
+   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; 
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%;
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; 
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 20px;
+}
+
+.btn {
+  background-color: black;
+ border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;;
+}
+
+.btn:hover {
+  background-color: #FFD300;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+.button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #FFD300;
+}
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: orange;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<a href="index.html">
+<img src="logo2.png" width="250" height="110" style="vertical-align:middle; position: absolute; left:50px; top: 50px">
+</a>
+<br><br><br><br><br><br><br><br>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Shipping Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> First Name</label>
+            <input type="text" id="fname" name="firstname">
+            <label for="lname"><i class="fa fa-user"></i> Last Name</label>
+            <input type="text" id="fname" name="Lastname">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email">
+            <label for="adr"><i class="fa fa-address-card-o"></i> House/Unit/Flr #, Bldg Name, Blk or Lot #</label>
+            <input type="text" id="adr" name="address" >
+            <label for="city"><i class="fa fa-institution"></i> City/Province</label>
+            <input type="text" id="city" name="city">
+            <div class="row">
+              <div class="col-75">
+                <label for="state">Barangay</label>
+                <input type="text" id="state" name="state" placeholder="">
+              </div>
+              <div class="col-50">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3><br>
+            <label for="fname">Choose a Payment method</label><br>
+            <div class="icon-container">
+            <input type="radio" id="male" name="gender" value="male">
+             <label for="male">Gcash</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Cash On Delivery</label><br><br>
+              <label for="contact">Contact No.</label>
+            <input type="text" id="contact" name="contact">
+            </div>
+          </div>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b style="color:red;">3</b></span></h4>
+      <p><a href="#">Coffee Charge Mug</a> <span id="price1" class="price"></span></p>
+      <p><a href="#">Kaibigan Shirt</a> <span id="price2" class="price"></span></p>
+      <p><a href="#">Olaf Skyblue Cap</a> <span id="price3" class="price"></span></p>
+      <hr>
+      <p>Total <span id="Total" class="price" style="color:black"><b></b></span></p>
+      <p id="Total"></p>
+       <button class="btn" onclick="openForm()">Checkout</button>
+      <button class="button" onclick="goBack()">Cancel</button>
+
+    </div>
+  </div>
+</div>
+<div class="form-popup" id="myForm" style="vertical-align:middle; ; position: absolute; left:550px; top: 300px; border: none;" >
+  <form action="/action_page.php" class="form-container"><center>
+    <h1>Thanks For Buying<br><br>Have a nice day<br><br></h1></center>
+    <a href="index.html"><button type="button" class="btn cancel">Continue Shopping
+    </button></a>
+  </form>
+</div>
+
+
+
+<script>
+  var p1 = 240;
+  var p2 = 350;
+  var p3 = 460;
+
+  var t = p1 + p2 + p3;
+  var p = "₱";
+
+    document.getElementById("price1").innerHTML = p.concat(p1);
+      document.getElementById("price2").innerHTML = p.concat(p2);
+    document.getElementById("price3").innerHTML = p.concat(p3);
+    document.getElementById("Total").innerHTML = p.concat(t);
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+function goBack() {
+  window.history.back();
+}
+</script>
+</body>
+</html>

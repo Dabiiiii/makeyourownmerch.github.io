@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<meta charset=utf-8 />
+
+<style>
+
+body{
+background-image: url(webbg5.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+div.damit{
+  margin-top: 100px;
+
+}
+h2 {
+  font-size: 50px;
+
+}
+h1 {
+  font-size: 25px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: -4px;
+}
+.card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align:center;
+  font-family: arial;
+float:middle;
+ margin-right: 40px;
+ margin-left: 450px;
+  border: 1px solid #ccc;
+
+  width: 500px;
+  height:580px;
+  text-align:center;
+
+
+  
+}
+
+.price {
+  color: red;
+  font-size: 28px;
+}
+
+.card button {
+  border: 0px;
+  outline: 0;
+padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align:center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.6; 
+}
+
+
+.checked {
+  color: orange;
+}
+
+article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; 
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+  margin-left: 10px;
+  margin-top: 30px;
+  border: none;
+  outline: none;
+  padding: 13px 17px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .btn:hover {
+  background-color: black;
+  color: white;
+}
+
+
+.open-button {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  position: fixed;
+  bottom: 33px;
+  right: 90px;
+  width: 280px;
+  font-size: 20px;
+}
+.buy {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  position: fixed;
+  bottom: 110px;
+  right: 90px;
+  width: 280px;
+  height:55px;
+  font-size: 20px;
+}
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+ position: absolute;
+ top:130px;
+ left:540px;
+  bottom: 100px;
+  right: 10px;
+ 
+  z-index: 9;
+  box-sizing: 10px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: none;
+  color: white;
+  padding: 10px 10px;
+  margin-left:0px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover, .buy:hover {
+  opacity: 0.9;
+}
+
+
+</style>   
+</head>
+<body>
+  <a href= "create.html "><img src="x.png"width="45" height="45" style=" position: absolute; left:1350px; top: 17px"></a>
+
+<!-- Add icon library -->
+<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<a href= "index.html "><img src="logo2.png" width="250" height="110" style="vertical-align:middle; ; position: absolute; left:50px; top: 50px"></a>
+
+
+<div class="damit">
+<h2 style="text-align:center"><b>CREATE YOUR DESIGN<b></h2>
+
+
+<div class="card">
+  <img src="whiteshirt.png" alt="Denim Jeans" style="width:555px;height:620px;margin-left:-37px;margin-bottom:500px">
+</div>
+
+</div>
+<h2 style="position: absolute; left:50px; top: 200px;font-size: 30px">Instruction:</h2>
+<p style="position: absolute; left:50px; top: 250px;font-size: 23px">Upload an image of your design to make<br> your own merch</p>
+<img id="blah" src="#" alt="" / style="position: absolute; left:618px; top: 360px">
+<input type='file' onchange="readURL(this);" /style="position: absolute; left:50px; top: 400px;font-size: 15px">
+<div id="myDIV"><button class="open-button" onclick="openForm()">Add to cart</button ></div>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container"><center>
+    <h1>Succesfully Added<br>to your cart <br> &#9989;</h1></center>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+   <a href="checkout.html  "><button class="buy">Buy it now  </button></a> 
+
+<script>
+function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(170)
+                        .height(220);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+</body>
+</html>

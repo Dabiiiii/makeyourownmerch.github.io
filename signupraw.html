@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url(webbg5.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 450px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+</style>
+<head>
+	<title>Sign Up </title>
+ 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	 <a href="index.html">
+  <img src="logo2.png" width="250" height="110" style="vertical-align:middle; color: black; position: absolute; left:50px; top: 50px">
+  </a>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Create an Account</h3>
+			</div>
+			<div class="card-body">
+				<for action="signup.php" method="post">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+						</div>
+						<input type="text" name = "name" class="form-control" placeholder="Firstname" required>
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+						</div>
+						<input type="text" name = "email" class="form-control" placeholder="Email" required>
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+						</div>
+						<input type="text" name = "uid" class="form-control" placeholder="Username" required>
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+						</div>
+						<input type="password" name = "pwd" class="form-control" placeholder="password" required>
+					</div>
+					</div>
+						<input type="password" name = "pwd2" class="form-control" placeholder="password" required>
+					</div>
+						<div class="form-group">
+						<button type="submit" class="btn float-right login_btn" style="background-color: #FFC312; ;" >Login</button>
+					</div>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+	if(isset($_GET["error"])){
+		if($_GET["error"] == "emptyinput"){
+			echo "<p>Fill in all fields</p>"
+		}
+		else if($_GET["error"] == "invaliduid"){
+			echo "<p>Choose a proper Username!</p>"
+		}
+		else if($_GET["error"] == "invalidemail"){
+			echo "<p>Choose a proper Email!</p>"
+		}
+		else if($_GET["error"] == "passwordsdontmatch"){
+			echo "<p>Passwords doesn't match!</p>"
+		}
+		else if($_GET["error"] == "stmtfailed"){
+			echo "<p>Something went wrong, try again!</p>"
+		}
+		else if($_GET["error"] == "usernametaken"){
+			echo "<p>Username already taken!</p>"
+		}
+		else if($_GET["error"] == "none"){
+			echo "<p>You have signed up!</p>"
+		}
+	}
+	?>
+</body>
+</html>
